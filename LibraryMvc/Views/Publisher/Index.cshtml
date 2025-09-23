@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LibraryMvc.DTOs.PublisherReadDto>
+
+<h2>Publishers</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Publisher</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Website</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.Website</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PublisherID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PublisherID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PublisherID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
