@@ -1,5 +1,8 @@
-﻿namespace LibraryMvc.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LibraryMvc.Models
 {
+    [Table("BookAuthor", Schema = "dbo")]
     public class BookAuthor
     {
         public int BookID { get; set; }

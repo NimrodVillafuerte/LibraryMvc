@@ -4,7 +4,7 @@ using LibraryMvc.Models;
 
 namespace LibraryMvc.Controllers;
 
-public class HomeController : AuthorsController
+public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 

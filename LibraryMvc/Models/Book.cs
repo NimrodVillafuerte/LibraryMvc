@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibraryMvc.Models
 {
+    [Table("Book", Schema = "dbo")]
     public class Book
     {
         [Key]
