@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibraryMvc.Models
 {
+    [Table("Author", Schema = "dbo")]
     public class Author
     {
         [Key]

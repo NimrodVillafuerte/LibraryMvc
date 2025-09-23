@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibraryMvc.Models
 {
+    [Table("Publisher", Schema = "dbo")]
     public class Publisher
     {
         [Key]
@@ -12,7 +14,6 @@ namespace LibraryMvc.Models
 
         [StringLength(255)]
         public string Address { get; set; }
-
         [StringLength(100)]
         public string Website { get; set; }
 
