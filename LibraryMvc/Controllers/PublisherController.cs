@@ -68,6 +68,15 @@ namespace LibraryMvc.Controllers
             await _repo.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var publisher = await _repo.GetByIdAsync(id);
+            if (publisher == null) return NotFound();
+
+            var dto = _mapper.Map<PublisherReadDto>(publisher);
+            return View(dto);
+        }
     }
 }
 

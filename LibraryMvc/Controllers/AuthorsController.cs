@@ -23,6 +23,15 @@ namespace LibraryMvc.Controllers
             return View(_mapper.Map<List<AuthorReadDto>>(authors));
         }
 
+        public async Task<IActionResult> Details(int id)
+        {
+            var author = await _repo.GetByIdAsync(id);
+            if (author == null) return NotFound();
+
+            var dto = _mapper.Map<AuthorReadDto>(author);
+            return View(dto);
+        }
+
         public IActionResult Create() => View();
 
         [HttpPost, ValidateAntiForgeryToken]
